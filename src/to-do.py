@@ -19,13 +19,14 @@ def main(page: ft.Page):#função principal
 
     theme_button = ft.IconButton(icon=ft.icons.BRIGHTNESS_6, on_click=toggle_theme)#criando um botão para alternar o tema
     
-    page.add(theme_button)#adicionando o botão na pagina
-    #page.theme_mode = ft.ThemeMode.LIGHT  # definindo o tema inicial como claro
-    page.title = "To-Do App"  # definindo o título da página
+    page.add(theme_button)#adicionando o botão na pagina de tema claro e escuro
+    page.title = "Tarefas App"  # definindo o título da página
     
     #configurações da pagina
     new_task = ft.TextField(hint_text="escreva suas anotaçoes aqui", width=300)#criando um input
-    page.add(ft.Row([new_task, ft.ElevatedButton("adicionar", on_click=add_clicked)]))#adicionando o input e um botão
+    page.add(ft.Row([new_task, ft.CupertinoButton
+                     ("adicionar", bgcolor=ft.CupertinoColors.SYSTEM_TEAL, 
+                                                  color=ft.CupertinoColors.DESTRUCTIVE_RED, on_click=add_clicked)]))#adicionando o input e um botão
     
     
 
